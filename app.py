@@ -24,10 +24,9 @@ def get_districts(state):
         return jsonify({"error": "No records found"}), 500
     return jsonify(data["records"])
 
-# ✅ New route for frontend JS
 @app.route('/get_data', methods=['GET', 'POST'])
 def get_data():
-    # Always fetch Karnataka data
+    
     state = "KARNATAKA"
     params = {
         "api-key": API_KEY,

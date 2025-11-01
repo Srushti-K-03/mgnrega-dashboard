@@ -1,4 +1,4 @@
-/* 🌿 Typography & Colors */
+/* Typography & Colors */
 body {
   font-family: 'Poppins', 'Noto Sans Kannada', sans-serif;
   background-color: #f4f8f3;
@@ -7,7 +7,7 @@ body {
   color: #222;
 }
 
-/* 🌿 Header */
+/* Header */
 header {
   background-color: #2e7d32;
   color: white;
@@ -25,7 +25,7 @@ header .subtitle {
   color: #c8e6c9;
 }
 
-/* 🌿 Main Layout */
+/*  Main Layout */
 main {
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@ main {
   padding: 40px 20px;
 }
 
-/* 🌿 Card Container */
+/*  Card Container */
 .container {
   background: #fff;
   padding: 30px;
@@ -46,7 +46,7 @@ main {
   animation: fadeIn 1s ease;
 }
 
-/* 🌿 Title */
+/*  Title */
 .container h2 {
   margin-top: 0;
   color: #1b5e20;
@@ -54,7 +54,7 @@ main {
   font-size: 1.4rem;
 }
 
-/* 🌿 District Selection */
+/*  District Selection */
 .district-select {
   margin: 20px 0;
 }
@@ -78,13 +78,13 @@ button:hover {
   background-color: #256428;
 }
 
-/* 🌿 Status */
+/* Status */
 .status {
   color: #555;
   font-style: italic;
 }
 
-/* 🌿 Stats Cards */
+/*  Stats Cards */
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -134,14 +134,14 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* 🌿 Insight */
+/*Insight */
 .insight {
   margin-top: 20px;
   color: #2e7d32;
   font-weight: 600;
 }
 
-/* 🌿 Footer */
+/*Footer */
 footer {
   text-align: center;
   padding: 16px;
@@ -151,7 +151,7 @@ footer {
   margin-top: 30px;
 }
 
-/* 🌿 Animation */
+/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

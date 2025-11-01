@@ -1,4 +1,3 @@
-// ✅ FINAL — Fully corrected Dynamic MGNREGA Dashboard Script
 let chart = null;
 
 const districtSelect = document.getElementById("districtSelect");
@@ -7,7 +6,7 @@ const status = document.getElementById("status");
 const summary = document.getElementById("summary");
 const insight = document.getElementById("insight");
 
-// ✅ Helper: fetch from backend safely
+//Helper: fetch from backend safely
 async function fetchBackendData() {
   const formData = new FormData();
   formData.append("state", "Karnataka");
@@ -20,7 +19,7 @@ async function fetchBackendData() {
   return await res.json();
 }
 
-// ✅ Load data dynamically when page loads (populate dropdown)
+//Load data dynamically when page loads (populate dropdown)
 window.addEventListener("load", async () => {
   try {
     status.textContent = "Loading district list...";
@@ -64,7 +63,7 @@ window.addEventListener("load", async () => {
   }
 });
 
-// ✅ Fetch and display selected district data
+//Fetch and display selected district data
 async function fetchAndRender(district) {
   status.textContent = `Loading district data for ${district}...`;
   summary.innerHTML = "";
@@ -95,7 +94,7 @@ async function fetchAndRender(district) {
   }
 }
 
-// ✅ Render stats + chart
+//Render stats + chart
 function renderDistrict(district, data, allDistricts) {
   const jobs = parseInt(data.Total_Individuals_Worked || 0);
   const wages = parseFloat(data.Wages || 0).toFixed(2);
@@ -107,15 +106,14 @@ function renderDistrict(district, data, allDistricts) {
   document.getElementById("dataMonth").textContent =
     `📅 Showing data for ${data.month}, ${data.fin_year}`;
 
-  // ✅ Chart data
+  //Chart data
   const monthOrder = ["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar"];
   const trendData = allDistricts.sort((a,b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month));
   const months = trendData.map(r => r.month);
   const fundsArr = trendData.map(r => parseFloat(r.Total_Exp || 0));
 
-  const ctx = document.getElementById("trendChart").getContext("2d"); // ✅ You missed this earlier
-
-  if (chart) chart.destroy(); // ✅ Prevents duplicate chart creation
+  const ctx = document.getElementById("trendChart").getContext("2d"); 
+  if (chart) chart.destroy(); //Prevents duplicate chart creation
 
   chart = new Chart(ctx, {
     type: "line",
@@ -174,7 +172,7 @@ function renderDistrict(district, data, allDistricts) {
   });
 }
 
-// ✅ Detect location (updates dropdown visibly; ensures option exists)
+// Detect location 
 function tryDetect() {
   if (!navigator.geolocation) {
     alert("Geolocation not supported.");
