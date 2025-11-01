@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Voice, Our Rights - MGNREGA Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    🌿 ನಮ್ಮ ಸ್ವರ, ನಮ್ಮ ಹಕ್ಕು  
+    <span class="subtitle">Our Voice, Our Rights</span>
+  </header>
+
+  <main>
+    <section class="card container fade-in">
+      <h2>MGNREGA — ಮಹಾತ್ಮ ಗಾಂಧಿ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯೋಗ ಖಾತರಿ ಯೋಜನೆ</h2>
+
+      <div class="district-select">
+        <label>ಜಿಲ್ಲೆ / District:</label>
+        <select id="districtSelect">
+          <option value="Bengaluru">Bengaluru</option>
+          <option value="Mysuru">Mysuru</option>
+          <option value="Tumkur">Tumkur</option>
+        </select>
+        <button id="detectBtn">📍 Detect</button>
+      </div>
+      <!-- ✅ Show which month’s data is being displayed -->
+<p id="dataMonth" class="month-info"></p>
+
+
+      <!-- ✅ Added summary + status -->
+      <p id="status" class="status">Loading district data...</p>
+      <div id="summary"></div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="icon">👷‍♀️</div>
+          <div>
+            <h3>ಉದ್ಯೋಗಗಳು / Jobs</h3>
+            <p id="jobs">—</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="icon">💰</div>
+          <div>
+            <h3>ವೇತನ / Wages Paid</h3>
+            <p id="wages">—</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="icon">🏗️</div>
+          <div>
+            <h3>ನಿಧಿ ಬಳಕೆ / Funds Utilized</h3>
+            <p id="funds">—</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h3>ಮಾಸಿಕ ಪ್ರವೃತ್ತಿ / Monthly Trend</h3>
+        <canvas id="trendChart"></canvas>
+      </div>
+
+      <!-- ✅ Added this to avoid null errors -->
+      <p id="insight" class="insight"></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Our Voice, Our Rights | Empowering Rural Transparency
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
