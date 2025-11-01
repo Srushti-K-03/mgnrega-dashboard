@@ -11,7 +11,8 @@ const insight = document.getElementById("insight");
 async function fetchBackendData() {
   const formData = new FormData();
   formData.append("state", "Karnataka");
-  const res = await fetch("http://127.0.0.1:5000/get_data", {
+  const res = await fetch("/get_data", {
+
     method: "POST",
     body: formData,
   });
